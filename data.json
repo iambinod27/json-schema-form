@@ -6,12 +6,12 @@
   "properties": {
     "firstName": {
       "type": "string",
-      "title": "First name",
+      "title": "Firstname",
       "default": "Chuck"
     },
     "lastName": {
       "type": "string",
-      "title": "Last name"
+      "title": "Lastname"
     },
     "telephone": {
       "type": "number",

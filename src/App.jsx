@@ -1,14 +1,25 @@
+import { useState } from "react";
 import data from "../data.json";
 
 const App = () => {
+  const [values, setValues] = useState();
   const db = data.properties;
   const dbArr = Object.entries(db);
 
-  console.log(dbArr);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(values);
+  };
+
+  const handleChange = (e) => {
+    const title = e.target.title;
+    const value = e.target.value;
+    setValues({ ...values, [title]: value });
+  };
+
   return (
     <>
-      <h1></h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="container">
           <div className="form-container">
             <div className="form-border">
@@ -19,8 +30,11 @@ const App = () => {
                     <div key={i} className="input-l">
                       <label>{item[0]}</label>
                       <input
+                        key={i}
                         type={item[1].type}
                         minLength={item[1].minLength}
+                        title={item[1].title}
+                        onChange={handleChange}
                       />
                     </div>
                   </>
