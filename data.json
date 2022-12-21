@@ -1,48 +1,26 @@
 {
-  "$schema": "http://json-schema.org/draft-06/schema#",
-  "$ref": "#/definitions/Welcome8",
-  "definitions": {
-    "Welcome8": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "vegetarian": {
-          "type": "boolean"
-        },
-        "birthDate": {
-          "type": "string",
-          "format": "date"
-        },
-        "personalData": {
-          "$ref": "#/definitions/PersonalData"
-        },
-        "postalCode": {
-          "type": "string",
-          "format": "integer"
-        }
-      },
-      "required": [
-        "birthDate",
-        "name",
-        "personalData",
-        "postalCode",
-        "vegetarian"
-      ],
-      "title": "Welcome8"
+  "title": "A registration form",
+  "description": "A simple form example.",
+  "type": "object",
+  "required": ["firstName", "lastName"],
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "title": "First name",
+      "default": "Chuck"
     },
-    "PersonalData": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "age": {
-          "type": "integer"
-        }
-      },
-      "required": ["age"],
-      "title": "PersonalData"
+    "lastName": {
+      "type": "string",
+      "title": "Last name"
+    },
+    "telephone": {
+      "type": "number",
+      "title": "Telephone",
+      "minLength": 10
+    },
+    "date": {
+      "type": "date",
+      "title": "date"
     }
   }
 }
