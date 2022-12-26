@@ -6,7 +6,7 @@
   "properties": {
     "firstName": {
       "type": "string",
-      "title": "Firstname",
+      "title": "firstName",
       "default": "Chuck"
     },
     "lastName": {
