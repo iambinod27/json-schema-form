@@ -7,11 +7,13 @@
     "firstName": {
       "type": "string",
       "title": "firstName",
-      "default": "Chuck"
+      "default": "Chuck",
+      "description": "Enter Your First Name"
     },
     "lastName": {
       "type": "string",
-      "title": "Lastname"
+      "title": "Lastname",
+      "description": "Enter Your last Name"
     },
     "telephone": {
       "type": "number",

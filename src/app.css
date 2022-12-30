@@ -55,3 +55,8 @@
   background: #f3f3f3;
   margin-bottom: 5px;
 }
+
+.error-msg {
+  color: red;
+  margin-bottom: 5px;
+}
