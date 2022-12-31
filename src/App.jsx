@@ -23,21 +23,17 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(values);
-
-    const { firstName, lastName, telephone, date } = values;
-
-    if (firstName == "" || lastName == "" || telephone == "" || date == "") {
-      setError(true);
-      setErrMsg("Empty Inputs submitted");
-      console.log("hello");
-    }
-
-    setError(false);
   };
 
   const handleChange = (e, item) => {
     const value = e.target.value;
-    setValues({ ...values, [item[0]]: value });
+
+    if (e.target.value == "") {
+      setError(true);
+    } else {
+      setError(false);
+      setValues({ ...values, [item[0]]: value });
+    }
   };
 
   return (
@@ -46,7 +42,6 @@ const App = () => {
         <div className="form-container">
           <div className="form-border">
             <h3>{data.title}</h3>
-            {error ? <div className="error-msg">{errMsg}</div> : ""}
             {dbArr.map((item, i) => {
               return (
                 <>
@@ -59,6 +54,11 @@ const App = () => {
                       title={item[1].title}
                       onChange={(e) => handleChange(e, item)}
                     />
+                    {error ? (
+                      <div className="error-msg">{item[1].description}</div>
+                    ) : (
+                      ""
+                    )}
                   </div>
                 </>
               );
